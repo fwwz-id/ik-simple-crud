@@ -8,7 +8,7 @@ export default class ContentService {
   }
 
   async getAllContents() {
-    const contents = await this._model.findMany({});
+    const contents = await this.model.findMany({});
 
     return {
         data: contents
