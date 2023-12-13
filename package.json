@@ -1,0 +1,39 @@
+{
+  "name": "simple-crud",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "email": "fwwz.id@gmail.com",
+    "name": "Fawwaz Abdurrahim",
+    "url": "https://www.github.com/fwwz-id"
+  },
+  "scripts": {
+    "start": "babel-node ./src/app.js",
+    "dev": "nodemon --exec babel-node ./src/app.js",
+    "seed": "prisma db seed",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "core-js": "^3.34.0",
+    "cors": "^2.8.5",
+    "debug": "^2.6.9",
+    "dotenv": "^16.3.1",
+    "express": "^4.16.1",
+    "express-async-handler": "^1.2.0",
+    "helmet": "^7.1.0",
+    "morgan": "^1.9.1",
+    "prisma": "^5.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.6",
+    "@faker-js/faker": "^8.3.1",
+    "nodemon": "^3.0.2"
+  },
+  "prisma": {
+    "schema": "./src/database/prisma/schema.prisma",
+    "seed": "babel-node ./src/database/seeder/seed.js"
+  }
+}

@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  nodejs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    # You can add other configuration options here, such as environment variables or volumes.
+    # For example, to use a development environment file:
+    # env_file:
+    #   - .env.dev
