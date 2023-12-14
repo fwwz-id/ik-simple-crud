@@ -8,5 +8,4 @@ const version = "/v1";
 
 router.use(version, ContentRouter);
 
-
 export default router;

@@ -51,7 +51,7 @@ The application will be available defaultly at http://localhost:3000.
 yarn prisma migrate dev
 ```
 
-## Run Prisma Seeder
+### Run Prisma Seeder
 
 ```bash
 yarn seed

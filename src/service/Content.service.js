@@ -11,7 +11,7 @@ export default class ContentService {
     const contents = await this.model.findMany({});
 
     return {
-        data: contents
-    } 
+      data: contents,
+    };
   }
 }

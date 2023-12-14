@@ -9,7 +9,7 @@ const ContentSeeder = async (size = 10) => {
           content: faker.lorem.paragraphs(),
         },
       });
-    })
+    }),
   );
 };
 
