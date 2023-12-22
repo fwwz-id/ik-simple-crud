@@ -6,14 +6,36 @@ generator client {
 }
 
 datasource db {
-  provider = "cockroachdb"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model Content {
-  id String @unique @default(uuid())
+  id String @unique @default(uuid()) @db.Char(36)
 
-  content String @db.String()
+  content String @db.LongText
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  Comments Comment[]
 
   @@map("contents")
+}
+
+model Comment {
+  id         String  @id @default(uuid()) @db.Char(36)
+  content_id String
+  parent_id  String?
+
+  content   String   @db.LongText
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  replies Comment[] @relation("CommentToReply")
+  parent  Comment?  @relation("CommentToReply", fields: [parent_id], references: [id])
+  
+  Content Content   @relation(fields: [content_id], references: [id])
+
+  @@map("comments")
 }

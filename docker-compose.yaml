@@ -1,13 +1,21 @@
-version: "1"
-
+version: '3'
 services:
-  nodejs-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  # Node.js server
+  node-app:
+    build: .
+    container_name: node-app
     ports:
       - "3000:3000"
-    # You can add other configuration options here, such as environment variables or volumes.
-    # For example, to use a development environment file:
-    # env_file:
-    #   - .env.dev
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+
+  # MySQL database
+  mysql:
+    image: mysql:latest
+    container_name: mysql-db
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"

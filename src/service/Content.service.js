@@ -8,7 +8,15 @@ export default class ContentService {
   }
 
   async getAllContents() {
-    const contents = await this.model.findMany({});
+    const contents = await this.model.findMany({
+      include: {
+        Comments: {
+          include: {
+            replies: true,
+          },
+        },
+      },
+    });
 
     return {
       data: contents,

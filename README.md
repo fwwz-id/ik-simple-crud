@@ -1,6 +1,6 @@
 # Node.js Express Application
 
-A simple **Node.js** **Express** application using **Prisma** as the **ORM** and **PostgreSQL** or **CockroachDB** as the database, **Dockerized** for easy deployment.
+A simple **Node.js** **Express** application using **Prisma** as the **ORM** and **MySQL** as the database, **Dockerized** for easy deployment.
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Create a .env file in the project root with the following command:
 cp .env.example .env
 ```
 
-Replace user, password, and yourdatabase with your **PostgreSQL** credentials.
+Replace user, password, and yourdatabase with your **MySQL** credentials.
 
 ### Run the Application Locally
 
