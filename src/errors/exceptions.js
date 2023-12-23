@@ -10,3 +10,25 @@ export class NotFoundException extends Error {
     this.message = message || this.name;
   }
 }
+
+export class UnauthorizedException extends Error {
+  name = ReasonPhrases.UNAUTHORIZED;
+  status = StatusCodes.UNAUTHORIZED;
+
+  constructor(message) {
+    super();
+
+    this.message = message || this.name;
+  }
+}
+
+export class LogicException extends Error {
+  name = ReasonPhrases.INTERNAL_SERVER_ERROR;
+  status = StatusCodes.INTERNAL_SERVER_ERROR;
+
+  constructor(message) {
+    super();
+
+    this.message = message || this.name;
+  }
+}

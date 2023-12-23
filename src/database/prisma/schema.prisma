@@ -13,20 +13,22 @@ datasource db {
 model User {
   id String @unique @default(uuid()) @db.Char(36)
 
-  username String @default(cuid())
+  username String  @default(cuid())
+  api_key  String? @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  Comment Comment[]
-  Content Content[]
+  Comment  Comment[]
+  Content  Content[]
+  UserLike UserLike[]
 
   @@map("users")
 }
 
 model Content {
   id        String @unique @default(uuid()) @db.Char(36)
-  author_id String
+  author_id String @db.Char(36)
 
   content String @db.LongText
 
@@ -34,26 +36,54 @@ model Content {
   updatedAt DateTime @default(now())
 
   Comments Comment[]
-  User     User      @relation(fields: [author_id], references: [id])
+  UserLike UserLike[]
+  User     User       @relation(fields: [author_id], references: [id])
 
   @@map("contents")
 }
 
 model Comment {
   id         String  @id @default(uuid()) @db.Char(36)
-  author_id  String
-  content_id String
-  parent_id  String?
+  author_id  String  @db.Char(36)
+  content_id String  @db.Char(36)
+  parent_id  String? @db.Char(36)
 
-  content   String   @db.LongText
+  content String @db.LongText
+
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  replies Comment[] @relation("CommentToReply")
-  parent  Comment?  @relation("CommentToReply", fields: [parent_id], references: [id])
-
-  Content Content @relation(fields: [content_id], references: [id])
-  User    User    @relation(fields: [author_id], references: [id])
+  replies  Comment[]  @relation("CommentToReply")
+  parent   Comment?   @relation("CommentToReply", fields: [parent_id], references: [id])
+  Content  Content    @relation(fields: [content_id], references: [id])
+  User     User       @relation(fields: [author_id], references: [id])
+  UserLike UserLike[]
 
   @@map("comments")
+}
+
+model UserLike {
+  id         Int     @unique @default(autoincrement())
+  comment_id String? @db.Char(36)
+  content_id String? @db.Char(36)
+  like_id    String  @db.Char(36)
+  user_id    String  @db.Char(36)
+
+  Comment Comment? @relation(fields: [comment_id], references: [id])
+  Content Content? @relation(fields: [content_id], references: [id])
+  Like    Like     @relation(fields: [like_id], references: [id])
+  User    User     @relation(fields: [user_id], references: [id])
+
+  @@map("user_likes")
+}
+
+model Like {
+  id String @id @default(uuid()) @db.Char(36)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  UserLike UserLike[]
+
+  @@map("likes")
 }

@@ -1,6 +1,7 @@
 import { user } from "../database/db";
 
-import { NotFoundException } from "../errors/exceptions";
+import { NotFoundException, UnauthorizedException } from "../errors/exceptions";
+import { generateApiKey } from "../lib/auth.lib";
 
 export default class UserService {
   _model = user;
@@ -10,11 +11,19 @@ export default class UserService {
   }
 
   /**
+   * @returns {import("@prisma/client").Prisma.UserInclude<import("@prisma/client/runtime/library").DefaultArgs>}
+   */
+  get include() {
+    return {};
+  }
+
+  /**
    * @param {string} id
    */
   async getUserById(id) {
     const user = await this.model.findUnique({
       where: { id },
+      include: this.include,
     });
 
     if (!user) {
@@ -26,9 +35,41 @@ export default class UserService {
     };
   }
 
+  /**
+   * @param {string} apiKey
+   */
+  async getUserApiKey(apiKey) {
+    const user = await this.model.findUnique({
+      where: {
+        api_key: apiKey,
+      },
+      include: this.include,
+    });
+
+    if (!user) {
+      throw new UnauthorizedException("Can't find specified API key!");
+    }
+
+    return {
+      data: {
+        api_key: user.api_key,
+      },
+    };
+  }
+
   async createUser() {
-    const user = await this.model.create({
+    let user = await this.model.create({
       data: {},
+      include: this.include,
+    });
+
+    user = await this.model.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        api_key: generateApiKey(user.id),
+      },
     });
 
     return {

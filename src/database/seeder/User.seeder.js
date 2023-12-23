@@ -1,12 +1,13 @@
 import { faker } from "@faker-js/faker";
-import { user } from "../db";
+
+import UserService from "../../service/User.service";
 
 const UserSeeder = async () => {
   return Promise.all(
     [...Array(faker.number.int({ min: 15, max: 30 }))].map(() => {
-      return user.create({
-        data: {},
-      });
+      const user = new UserService();
+
+      return user.createUser();
     })
   );
 };

@@ -2,16 +2,18 @@
 CREATE TABLE `users` (
     `id` CHAR(36) NOT NULL,
     `username` VARCHAR(191) NOT NULL,
+    `api_key` VARCHAR(191) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
-    UNIQUE INDEX `users_id_key`(`id`)
+    UNIQUE INDEX `users_id_key`(`id`),
+    UNIQUE INDEX `users_api_key_key`(`api_key`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
 CREATE TABLE `contents` (
     `id` CHAR(36) NOT NULL,
-    `author_id` VARCHAR(191) NOT NULL,
+    `author_id` CHAR(36) NOT NULL,
     `content` LONGTEXT NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -22,10 +24,30 @@ CREATE TABLE `contents` (
 -- CreateTable
 CREATE TABLE `comments` (
     `id` CHAR(36) NOT NULL,
-    `author_id` VARCHAR(191) NOT NULL,
-    `content_id` VARCHAR(191) NOT NULL,
-    `parent_id` VARCHAR(191) NULL,
+    `author_id` CHAR(36) NOT NULL,
+    `content_id` CHAR(36) NOT NULL,
+    `parent_id` CHAR(36) NULL,
     `content` LONGTEXT NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `user_likes` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `comment_id` CHAR(36) NULL,
+    `content_id` CHAR(36) NULL,
+    `like_id` CHAR(36) NOT NULL,
+    `user_id` CHAR(36) NOT NULL,
+
+    UNIQUE INDEX `user_likes_id_key`(`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `likes` (
+    `id` CHAR(36) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
@@ -43,3 +65,15 @@ ALTER TABLE `comments` ADD CONSTRAINT `comments_content_id_fkey` FOREIGN KEY (`c
 
 -- AddForeignKey
 ALTER TABLE `comments` ADD CONSTRAINT `comments_author_id_fkey` FOREIGN KEY (`author_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `user_likes` ADD CONSTRAINT `user_likes_comment_id_fkey` FOREIGN KEY (`comment_id`) REFERENCES `comments`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `user_likes` ADD CONSTRAINT `user_likes_content_id_fkey` FOREIGN KEY (`content_id`) REFERENCES `contents`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `user_likes` ADD CONSTRAINT `user_likes_like_id_fkey` FOREIGN KEY (`like_id`) REFERENCES `likes`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `user_likes` ADD CONSTRAINT `user_likes_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
