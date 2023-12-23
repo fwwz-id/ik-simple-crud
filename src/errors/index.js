@@ -13,10 +13,14 @@ export default class ExceptionHandler {
       (err, req, res, next) => {
         console.log(
           "\x1b[31m%s\x1b[0m",
-          `[ERROR] : ${err.message}`
+          `
+          [ERROR] : ${err.message}
+          [CODE] : ${err.status || 500}
+          [TIMESTAMP] : ${new Date().toJSON()}
+          `
         );
 
-        res.status(err.status || 500).json({
+        return res.status(err.status || 500).json({
           error: {
             name: err.name,
             message: err.message,

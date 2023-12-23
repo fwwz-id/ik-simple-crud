@@ -1,3 +1,5 @@
+import { StatusCodes } from "http-status-codes";
+
 import ContentService from "../../service/Content.service";
 
 export default class ContentController {
@@ -10,6 +12,6 @@ export default class ContentController {
     const content = new ContentService();
     const response = await content.getAllContents();
 
-    res.status(200).json(response);
+    res.status(StatusCodes.OK).json(response);
   }
 }

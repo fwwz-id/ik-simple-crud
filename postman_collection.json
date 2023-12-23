@@ -1,143 +1,304 @@
 {
-  "info": {
-    "_postman_id": "05a56550-3505-4483-bbde-ca8cfb67f717",
-    "name": "IK-simple-crud",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "16801079",
-    "_collection_link": "https://lively-flare-419915.postman.co/workspace/Artopologi~6c8c7313-c002-46a2-99eb-39688c5e67d1/collection/16801079-05a56550-3505-4483-bbde-ca8cfb67f717?action=share&source=collection_link&creator=16801079"
-  },
-  "item": [
-    {
-      "name": "getAllContents",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{url}}/api/v1/contents",
-          "host": ["{{url}}"],
-          "path": ["api", "v1", "contents"]
-        }
-      },
-      "response": [
-        {
-          "name": "200 OK",
-          "originalRequest": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{url}}/api/v1/contents",
-              "host": ["{{url}}"],
-              "path": ["api", "v1", "contents"]
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": "json",
-          "header": [
-            {
-              "key": "Content-Security-Policy",
-              "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-            },
-            {
-              "key": "Cross-Origin-Opener-Policy",
-              "value": "same-origin"
-            },
-            {
-              "key": "Cross-Origin-Resource-Policy",
-              "value": "same-origin"
-            },
-            {
-              "key": "Origin-Agent-Cluster",
-              "value": "?1"
-            },
-            {
-              "key": "Referrer-Policy",
-              "value": "no-referrer"
-            },
-            {
-              "key": "Strict-Transport-Security",
-              "value": "max-age=15552000; includeSubDomains"
-            },
-            {
-              "key": "X-Content-Type-Options",
-              "value": "nosniff"
-            },
-            {
-              "key": "X-DNS-Prefetch-Control",
-              "value": "off"
-            },
-            {
-              "key": "X-Download-Options",
-              "value": "noopen"
-            },
-            {
-              "key": "X-Frame-Options",
-              "value": "SAMEORIGIN"
-            },
-            {
-              "key": "X-Permitted-Cross-Domain-Policies",
-              "value": "none"
-            },
-            {
-              "key": "X-XSS-Protection",
-              "value": "0"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "5078"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"13d6-YAxG7FIeGnxk82Ilro0e2D7Xyqw\""
-            },
-            {
-              "key": "Date",
-              "value": "Wed, 13 Dec 2023 15:54:07 GMT"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
-            }
-          ],
-          "cookie": [],
-          "body": "{\n    \"data\": [\n        {\n            \"id\": \"9aaeeb4e-9a21-463a-8eef-697599080e7d\",\n            \"content\": \"Bellum amoveo aetas currus acceptus molestias auxilium. Culpo defleo super dolores urbanus supra curto cuius audio vere. Saepe sumo crastinus.\\nBellum quae ago calamitas tutamen. Deprimo articulus tardus laboriosam. Sub teres spiritus viriliter curto sub speculum curatio corpus.\\nVitium tripudio aestivus dens. Demitto curvo bonus cetera tunc animi claro patior defero. A nisi conturbo vapulus cura.\"\n        },\n        {\n            \"id\": \"4c864db1-826c-44eb-98bc-05b526ebeca0\",\n            \"content\": \"Solum utique asper altus aspicio commemoro unde cotidie exercitationem contra. Teneo angulus delibero coadunatio agnosco adipiscor agnitio delibero blandior doloremque. Abeo patria callide basium derelinquo volo pauci valde.\\nRepellendus socius credo. Corporis velit tonsor clarus alioqui vulnero catena constans. Verto facere quasi cavus deprecator acervus caveo.\\nAb aureus spes aequus coniecto depono decens conspergo colo conqueror. Torrens decens delinquo. Utpote tabella eveniet libero verto curatio amplus cornu cura.\"\n        },\n        {\n            \"id\": \"382e3dd7-c9f9-42a2-a7cf-cf5ca3334717\",\n            \"content\": \"Theologus beatae deporto trucido defluo sint depromo brevis certus. Aegre usque censura. Contego arma cruentus turpis modi.\\nExcepturi solus ustulo calamitas accommodo summisse sapiente administratio. Annus cena acies debitis commemoro callide arbor spiculum acies excepturi. Consequatur abutor conculco asper unde utor cotidie necessitatibus.\\nCorreptius tres tertius. Balbus cervus vallum culpo allatus bonus torrens incidunt coniecto. Trans vinco arma vulgus canonicus confugo cunae alo stultus.\"\n        },\n        {\n            \"id\": \"e1183f15-82c2-4dc2-8ca9-7c580cccdaef\",\n            \"content\": \"Coaegresco approbo talus desolo subito verbera collum abeo. Cura vero crustulum. Confero attonbitus vomito aptus somnus cuppedia.\\nTemptatio suadeo amitto. Repellat collum absens a caries cribro quaerat textor. Accommodo talis ventosus umquam acsi.\\nVeritas tenetur abstergo accommodo sint absque. Cicuta quasi aranea veritatis bos. Deprimo patrocinor aliqua.\"\n        },\n        {\n            \"id\": \"b004505d-7fe9-4876-b899-6c830777a036\",\n            \"content\": \"Explicabo itaque condico tactus verecundia comptus. Video suasoria auditor decretum conduco creo celo cura audio. Adsuesco sordeo cognatus ventus admoneo voluptate aggero deleniti ascisco abbas.\\nVomito beatus ad corporis sordeo suus. Convoco voluptate quia infit adhuc desipio cresco inflammatio theologus conitor. Clementia enim calculus adipiscor.\\nAnimus cras toties urbs amo summa animi deporto paulatim censura. Est sumptus vespillo. Accusantium cicuta neque calamitas tergeo vomito aggredior.\"\n        },\n        {\n            \"id\": \"83ab4a9d-6491-4f20-954a-da9fd67ab970\",\n            \"content\": \"Dolor armarium confugo virga nostrum iusto. Distinctio amplus currus tandem versus cogito. Tego non corporis adversus angulus.\\nAtrox maiores aufero adsuesco. Asper averto beatus non tonsor venio cumque venia vesper. Tribuo vigor alter alii viscus usque textor.\\nCalco quo dapifer cultura thesis quibusdam corroboro urbanus cresco ascisco. Voveo tego ocer. Summopere laboriosam carmen deficio id vesica xiphias conor corrigo.\"\n        },\n        {\n            \"id\": \"ca36e826-ba9a-4147-a30b-3e9bda476d4c\",\n            \"content\": \"Carus consuasor annus suffragium xiphias tabella vindico alias congregatio. Antiquus thesaurus adopto calculus aegrotatio. Cedo videlicet villa maiores accusator vicinus talio usitas tripudio.\\nTrado argumentum villa. Nihil vigilo quia voro ter. Sub vix ulciscor theologus deludo.\\nDamno colligo quisquam aranea abeo ipsum pecco argentum tamquam armarium. Alveus advoco aveho depraedor supplanto. Nostrum fugiat calculus titulus acceptus temperantia testimonium inventore.\"\n        },\n        {\n            \"id\": \"6ad76abf-00c3-4624-bcd9-856f81095cf9\",\n            \"content\": \"Temeritas artificiose considero ait creptio assumenda. Subseco speculum dignissimos consequatur atrox aduro caterva defluo. Tremo amaritudo corrigo aut surculus absque corrigo sol.\\nQuas debeo nam conor officiis. Usus antea triumphus. Adinventitias annus caelestis natus utique suffragium benevolentia adicio.\\nCito copiose conitor aufero venustas cruentus suppono cena correptius. Laboriosam titulus asporto terra dedecor conor utpote validus ea beatus. Beneficium dedecor vulgivagus amoveo.\"\n        },\n        {\n            \"id\": \"98e652ef-d0ae-4906-8a77-7437ce7a9fea\",\n            \"content\": \"Coaegresco arto una astrum. Subito peccatus exercitationem currus. Voluntarius voluntarius canis cinis ancilla.\\nUnus conscendo valeo tot amor suasoria. Clementia defessus ceno vallum apostolus bestia. Condico confugo antea adhaero.\\nCarus tenax ara voveo corrupti comedo debilito. Succurro audacia comptus laborum surgo basium. Sequi statim strenuus doloremque laboriosam suffragium quaerat.\"\n        },\n        {\n            \"id\": \"6d702d0b-c367-4955-a833-b944fe0186dc\",\n            \"content\": \"Pax ager denique. Et annus tui vilicus admitto. Adflicto aiunt molestiae tam appello studio confido supplanto.\\nQuo una spoliatio delectatio aro officia tenetur curiositas coepi. Aspicio tenetur tam patruus vicinus. Deserunt pecus vicissitudo depulso xiphias velut audeo.\\nComis accusantium adsuesco confugo terreo cumque aurum triumphus accusator sophismata. Tantillus vito acidus. Soluta consequatur clibanus valeo.\"\n        }\n    ]\n}"
-        }
-      ]
-    }
-  ],
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "type": "text/javascript",
-        "exec": [""]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "type": "text/javascript",
-        "exec": [""]
-      }
-    }
-  ],
-  "variable": [
-    {
-      "key": "url",
-      "value": "http://localhost:3000",
-      "type": "string"
-    }
-  ]
+	"info": {
+		"_postman_id": "05a56550-3505-4483-bbde-ca8cfb67f717",
+		"name": "IK-simple-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16801079",
+		"_collection_link": "https://lively-flare-419915.postman.co/workspace/Artopologi~6c8c7313-c002-46a2-99eb-39688c5e67d1/collection/16801079-05a56550-3505-4483-bbde-ca8cfb67f717?action=share&source=collection_link&creator=16801079"
+	},
+	"item": [
+		{
+			"name": "content",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/contents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"contents"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/contents",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"contents"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5078"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13d6-YAxG7FIeGnxk82Ilro0e2D7Xyqw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 15:54:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"9aaeeb4e-9a21-463a-8eef-697599080e7d\",\n            \"content\": \"Bellum amoveo aetas currus acceptus molestias auxilium. Culpo defleo super dolores urbanus supra curto cuius audio vere. Saepe sumo crastinus.\\nBellum quae ago calamitas tutamen. Deprimo articulus tardus laboriosam. Sub teres spiritus viriliter curto sub speculum curatio corpus.\\nVitium tripudio aestivus dens. Demitto curvo bonus cetera tunc animi claro patior defero. A nisi conturbo vapulus cura.\"\n        },\n        {\n            \"id\": \"4c864db1-826c-44eb-98bc-05b526ebeca0\",\n            \"content\": \"Solum utique asper altus aspicio commemoro unde cotidie exercitationem contra. Teneo angulus delibero coadunatio agnosco adipiscor agnitio delibero blandior doloremque. Abeo patria callide basium derelinquo volo pauci valde.\\nRepellendus socius credo. Corporis velit tonsor clarus alioqui vulnero catena constans. Verto facere quasi cavus deprecator acervus caveo.\\nAb aureus spes aequus coniecto depono decens conspergo colo conqueror. Torrens decens delinquo. Utpote tabella eveniet libero verto curatio amplus cornu cura.\"\n        },\n        {\n            \"id\": \"382e3dd7-c9f9-42a2-a7cf-cf5ca3334717\",\n            \"content\": \"Theologus beatae deporto trucido defluo sint depromo brevis certus. Aegre usque censura. Contego arma cruentus turpis modi.\\nExcepturi solus ustulo calamitas accommodo summisse sapiente administratio. Annus cena acies debitis commemoro callide arbor spiculum acies excepturi. Consequatur abutor conculco asper unde utor cotidie necessitatibus.\\nCorreptius tres tertius. Balbus cervus vallum culpo allatus bonus torrens incidunt coniecto. Trans vinco arma vulgus canonicus confugo cunae alo stultus.\"\n        },\n        {\n            \"id\": \"e1183f15-82c2-4dc2-8ca9-7c580cccdaef\",\n            \"content\": \"Coaegresco approbo talus desolo subito verbera collum abeo. Cura vero crustulum. Confero attonbitus vomito aptus somnus cuppedia.\\nTemptatio suadeo amitto. Repellat collum absens a caries cribro quaerat textor. Accommodo talis ventosus umquam acsi.\\nVeritas tenetur abstergo accommodo sint absque. Cicuta quasi aranea veritatis bos. Deprimo patrocinor aliqua.\"\n        },\n        {\n            \"id\": \"b004505d-7fe9-4876-b899-6c830777a036\",\n            \"content\": \"Explicabo itaque condico tactus verecundia comptus. Video suasoria auditor decretum conduco creo celo cura audio. Adsuesco sordeo cognatus ventus admoneo voluptate aggero deleniti ascisco abbas.\\nVomito beatus ad corporis sordeo suus. Convoco voluptate quia infit adhuc desipio cresco inflammatio theologus conitor. Clementia enim calculus adipiscor.\\nAnimus cras toties urbs amo summa animi deporto paulatim censura. Est sumptus vespillo. Accusantium cicuta neque calamitas tergeo vomito aggredior.\"\n        },\n        {\n            \"id\": \"83ab4a9d-6491-4f20-954a-da9fd67ab970\",\n            \"content\": \"Dolor armarium confugo virga nostrum iusto. Distinctio amplus currus tandem versus cogito. Tego non corporis adversus angulus.\\nAtrox maiores aufero adsuesco. Asper averto beatus non tonsor venio cumque venia vesper. Tribuo vigor alter alii viscus usque textor.\\nCalco quo dapifer cultura thesis quibusdam corroboro urbanus cresco ascisco. Voveo tego ocer. Summopere laboriosam carmen deficio id vesica xiphias conor corrigo.\"\n        },\n        {\n            \"id\": \"ca36e826-ba9a-4147-a30b-3e9bda476d4c\",\n            \"content\": \"Carus consuasor annus suffragium xiphias tabella vindico alias congregatio. Antiquus thesaurus adopto calculus aegrotatio. Cedo videlicet villa maiores accusator vicinus talio usitas tripudio.\\nTrado argumentum villa. Nihil vigilo quia voro ter. Sub vix ulciscor theologus deludo.\\nDamno colligo quisquam aranea abeo ipsum pecco argentum tamquam armarium. Alveus advoco aveho depraedor supplanto. Nostrum fugiat calculus titulus acceptus temperantia testimonium inventore.\"\n        },\n        {\n            \"id\": \"6ad76abf-00c3-4624-bcd9-856f81095cf9\",\n            \"content\": \"Temeritas artificiose considero ait creptio assumenda. Subseco speculum dignissimos consequatur atrox aduro caterva defluo. Tremo amaritudo corrigo aut surculus absque corrigo sol.\\nQuas debeo nam conor officiis. Usus antea triumphus. Adinventitias annus caelestis natus utique suffragium benevolentia adicio.\\nCito copiose conitor aufero venustas cruentus suppono cena correptius. Laboriosam titulus asporto terra dedecor conor utpote validus ea beatus. Beneficium dedecor vulgivagus amoveo.\"\n        },\n        {\n            \"id\": \"98e652ef-d0ae-4906-8a77-7437ce7a9fea\",\n            \"content\": \"Coaegresco arto una astrum. Subito peccatus exercitationem currus. Voluntarius voluntarius canis cinis ancilla.\\nUnus conscendo valeo tot amor suasoria. Clementia defessus ceno vallum apostolus bestia. Condico confugo antea adhaero.\\nCarus tenax ara voveo corrupti comedo debilito. Succurro audacia comptus laborum surgo basium. Sequi statim strenuus doloremque laboriosam suffragium quaerat.\"\n        },\n        {\n            \"id\": \"6d702d0b-c367-4955-a833-b944fe0186dc\",\n            \"content\": \"Pax ager denique. Et annus tui vilicus admitto. Adflicto aiunt molestiae tam appello studio confido supplanto.\\nQuo una spoliatio delectatio aro officia tenetur curiositas coepi. Aspicio tenetur tam patruus vicinus. Deserunt pecus vicissitudo depulso xiphias velut audeo.\\nComis accusantium adsuesco confugo terreo cumque aurum triumphus accusator sophismata. Tantillus vito acidus. Soluta consequatur clibanus valeo.\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/users/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0020a55a-213c-4874-ae20-608f55e5da0e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/users/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0020a55a-213c-4874-ae20-608f55e5da0e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-n6jzuWLFFwVlAmotYvoiLpvy1tc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Dec 2023 05:47:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0020a55a-213c-4874-ae20-608f55e5da0e\",\n        \"username\": \"clqhkrcsy0001pxqgtzckynbs\",\n        \"createdAt\": \"2023-12-23T04:43:00.369Z\",\n        \"updatedAt\": \"2023-12-23T04:43:00.369Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
 }

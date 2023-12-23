@@ -3,9 +3,10 @@ import "dotenv/config";
 import prisma from "../db";
 
 import ContentSeeder from "./Content.seeder";
-import CommentSeeder from "./Comment.seeder";
+import { CommentSeeder, RepliesSeeder } from "./Comment.seeder";
+import UserSeeder from "./User.seeder";
 
-const seeder = [ContentSeeder, CommentSeeder];
+const seeder = [UserSeeder, ContentSeeder, CommentSeeder, RepliesSeeder];
 
 const Seed = async (seeders = seeder) => {
   if (!seeders.length) {
