@@ -85,9 +85,9 @@ This repo is under MIT License (MIT). Please see [License File](LICENSE) for mor
 
 ## Maintainer
 
-| Name                 | Email             | Github                                                        |
-| -------------------- | ----------------- | ------------------------------------------------------------- |
+| Name                 | Email             | Github                                                           |
+| -------------------- | ----------------- | ---------------------------------------------------------------- |
 | Fawwaz Abdurrahim    | fwwz.id@proton.me | [https://www.github.com/fwwz-id](https://www.github.com/fwwz-id) |
-| Muhammad Java Arifin | -                 | -                                                             |
-| Lucky Alma           | -                 | -                                                             |
-| Luqman Hakim         | -                 | -                                                             |
+| Muhammad Java Arifin | -                 | -                                                                |
+| Lucky Alma           | -                 | -                                                                |
+| Luqman Hakim         | -                 | -                                                                |

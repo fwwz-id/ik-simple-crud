@@ -25,7 +25,7 @@ export const CommentSeeder = async (size = 10) => {
           },
         },
       });
-    })
+    }),
   );
 };
 
@@ -77,12 +77,12 @@ export const RepliesSeeder = async () => {
                   content_id: c.content_id,
                   content: faker.lorem.paragraphs(),
                   author_id: user.id,
-                })
+                }),
               ),
             },
           },
         },
       });
-    })
+    }),
   );
 };

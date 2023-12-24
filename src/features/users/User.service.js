@@ -1,6 +1,9 @@
 import { user } from "@database/index";
 
-import { NotFoundException, UnauthorizedException } from "../../errors/exceptions";
+import {
+  NotFoundException,
+  UnauthorizedException,
+} from "../../errors/exceptions";
 import { generateApiKey } from "../../lib/auth.lib";
 
 export default class UserService {
@@ -39,7 +42,7 @@ export default class UserService {
   /**
    * @param {string} apiKey
    */
-  async getUserApiKey(apiKey) {
+  async getUserByApiKey(apiKey) {
     const user = await this.model.findUnique({
       where: {
         api_key: apiKey,
@@ -48,12 +51,12 @@ export default class UserService {
     });
 
     if (!user) {
-      throw new UnauthorizedException("Can't find specified API key!");
+      throw new UnauthorizedException("Can't find user with this API key!");
     }
 
     return {
       data: {
-        api_key: user.api_key,
+        user,
       },
     };
   }

@@ -10,7 +10,7 @@ export function generateApiKey(userId) {
 
   if (!salt) {
     throw new LogicException(
-      "An error occurred in the API key generation function due to an invalid salt value."
+      "An error occurred in the API key generation function due to an invalid salt value.",
     );
   }
 

@@ -16,7 +16,11 @@ const isAuthorized =
         throw new UnauthorizedException("No API Key found!");
       }
 
-      await new UserService().getUserApiKey(apiKey);
+      const {
+        data: { user },
+      } = await new UserService().getUserByApiKey(apiKey);
+
+      req.user = user;
 
       next();
     } catch (error) {

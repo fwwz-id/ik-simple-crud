@@ -12,7 +12,7 @@ datasource db {
 }
 
 model User {
-  id String @unique @default(uuid()) @db.Char(36)
+  id String @id @default(uuid()) @db.Char(36)
 
   username String  @default(cuid())
   api_key  String? @unique
@@ -28,7 +28,7 @@ model User {
 }
 
 model Content {
-  id        String @unique @default(uuid()) @db.Char(36)
+  id        String @id @default(uuid()) @db.Char(36)
   author_id String @db.Char(36)
 
   content String @db.LongText
@@ -79,5 +79,7 @@ model Like {
   Content Content? @relation(fields: [content_id], references: [id])
   User    User     @relation(fields: [user_id], references: [id])
 
+  @@unique([comment_id, user_id])
+  @@unique([content_id, user_id])
   @@map("likes")
 }

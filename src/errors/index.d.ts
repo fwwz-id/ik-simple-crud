@@ -1,3 +1,3 @@
 interface ExtendedError extends Error {
-    status: number;
+  status: number;
 }

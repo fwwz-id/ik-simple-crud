@@ -21,7 +21,7 @@ const ContentSeeder = async (size = 10) => {
           },
         },
       });
-    })
+    }),
   );
 };
 

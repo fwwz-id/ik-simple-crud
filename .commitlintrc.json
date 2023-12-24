@@ -17,6 +17,7 @@
         "style"
       ]
     ],
+    "body-max-line-length": [0, "always", 300],
     "footer-max-line-length": [0, "always", 300]
   }
 }

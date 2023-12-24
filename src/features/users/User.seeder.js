@@ -8,7 +8,7 @@ const UserSeeder = async () => {
       const user = new UserService();
 
       return user.createUser();
-    })
+    }),
   );
 };
 

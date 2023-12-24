@@ -18,7 +18,7 @@ export default class ExceptionHandler {
           [ERROR] : ${err.message}
           [CODE] : ${err.status || 500}
           [TIMESTAMP] : ${new Date().toJSON()}
-          `
+          `,
         );
 
         return res.status(err.status || 500).json({
@@ -27,7 +27,7 @@ export default class ExceptionHandler {
             message: err.message,
           },
         });
-      }
+      },
     );
   }
 }
