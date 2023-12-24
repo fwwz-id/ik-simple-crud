@@ -7,11 +7,23 @@
     "name": "Fawwaz Abdurrahim",
     "url": "https://www.github.com/fwwz-id"
   },
+  "maintainers": [
+    {
+      "name": "Muhammad Java Arifin"
+    },
+    {
+      "name": "Lucky Alma"
+    },
+    {
+      "name": "Luqman Hakim"
+    }
+  ],
   "scripts": {
     "start": "babel-node ./src/app.js",
     "dev": "nodemon --exec babel-node ./src/app.js",
     "build": "echo \"No build scripts\"",
     "vercel-build": "prisma generate",
+    "postinstall": "husky install",
     "pretty": "prettier -w .",
     "seed": "prisma db seed",
     "studio": "prisma studio"
@@ -33,12 +45,35 @@
   "devDependencies": {
     "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@faker-js/faker": "^8.3.1",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-module-resolver": "^1.5.0",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "nodemon": "^3.0.2",
     "prettier": "^3.1.1"
   },
   "prisma": {
     "schema": "./src/database/prisma/schema.prisma",
-    "seed": "babel-node ./src/database/seeder/seed.js"
+    "seed": "babel-node ./src/database/seed.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint — fix",
+      "prettier — write",
+      "git add"
+    ]
   }
 }

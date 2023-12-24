@@ -1,8 +1,8 @@
 import http from "http";
 import express from "express";
 
-import Router from "../routes";
-import Middleware from "../middlewares";
+import Router from "./routes";
+import Middleware from "@middlewares";
 import ExceptionHandler from "../errors";
 
 const server = () => {

@@ -1,10 +1,13 @@
 import "dotenv/config";
 
-import prisma from "../db";
+import prisma from ".";
 
-import ContentSeeder from "./Content.seeder";
-import { CommentSeeder, RepliesSeeder } from "./Comment.seeder";
-import UserSeeder from "./User.seeder";
+import ContentSeeder from "@features/contents/Content.seeder";
+import {
+  CommentSeeder,
+  RepliesSeeder,
+} from "@features/comments/Comment.seeder";
+import UserSeeder from "@features/users/User.seeder";
 
 const seeder = [UserSeeder, ContentSeeder, CommentSeeder, RepliesSeeder];
 

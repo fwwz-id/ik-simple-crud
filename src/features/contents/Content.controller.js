@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 
-import ContentService from "../../service/Content.service";
+import ContentService from "./Content.service";
 
 export default class ContentController {
   /**
@@ -8,6 +8,7 @@ export default class ContentController {
    * @param {import("express").Response} res
    * @param {import("express").NextFunction} next
    */
+  // eslint-disable-next-line no-unused-vars
   static async index(req, res, next) {
     const content = new ContentService();
     const response = await content.getAllContents();
@@ -20,6 +21,7 @@ export default class ContentController {
    * @param {import("express").Response} res
    * @param {import("express").NextFunction} next
    */
+  // eslint-disable-next-line no-unused-vars
   static async create(req, res, next) {
     /** @type {(import("@prisma/client").Prisma.Without<import("@prisma/client").Prisma.ContentCreateInput, import("@prisma/client").Prisma.ContentUncheckedCreateInput> & import("@prisma/client").Prisma.ContentUncheckedCreateInput) | (import("@prisma/client").Prisma.Without<import("@prisma/client").Prisma.ContentUncheckedCreateInput, import("@prisma/client").Prisma.ContentCreateInput> & import("@prisma/client").Prisma.ContentCreateInput)} */
     const body = req.body;
@@ -35,6 +37,7 @@ export default class ContentController {
    * @param {import("express").Response} res
    * @param {import("express").NextFunction} next
    */
+  // eslint-disable-next-line no-unused-vars
   static async show(req, res, next) {
     const { id } = req.params;
 

@@ -1,8 +1,8 @@
 import { Router } from "express";
 import expressAsyncHandler from "express-async-handler";
 
-import ContentController from "../../../controller/v1/Content.controller";
-import isAuthorized from "../../../middlewares/isAuthorized.middleware";
+import ContentController from "./Content.controller";
+import isAuthorized from "@middlewares/isAuthorized.middleware";
 
 const router = Router();
 

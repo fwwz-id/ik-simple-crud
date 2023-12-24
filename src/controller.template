@@ -4,6 +4,7 @@ export default class TemplateController {
    * @param {import("express").Response} res
    * @param {import("express").NextFunction} next
    */
+   // eslint-disable-next-line no-unused-vars
   static index(req, res, next) {
     res.status(200).json({
       message: "Hello",

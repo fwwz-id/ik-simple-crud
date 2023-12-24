@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-import UserService from "../../service/User.service";
+import UserService from "./User.service";
 
 const UserSeeder = async () => {
   return Promise.all(

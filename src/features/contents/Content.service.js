@@ -1,4 +1,4 @@
-import { content } from "../database/db";
+import { content } from "@database";
 
 export default class ContentService {
   _model = content;

@@ -1,7 +1,7 @@
-import { user } from "../database/db";
+import { user } from "../../database";
 
-import { NotFoundException, UnauthorizedException } from "../errors/exceptions";
-import { generateApiKey } from "../lib/auth.lib";
+import { NotFoundException, UnauthorizedException } from "../../errors/exceptions";
+import { generateApiKey } from "../../lib/auth.lib";
 
 export default class UserService {
   _model = user;

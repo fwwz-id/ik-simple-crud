@@ -1,6 +1,6 @@
 import { UnauthorizedException } from "../errors/exceptions";
 
-import UserService from "../service/User.service";
+import UserService from "@features/users/User.service";
 
 const isAuthorized =
   /**

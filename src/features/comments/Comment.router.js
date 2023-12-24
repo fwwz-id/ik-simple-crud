@@ -1,7 +1,7 @@
 import { Router } from "express";
 import expressAsyncHandler from "express-async-handler";
 
-import ContentController from "../../../controller/v1/Content.controller";
+import ContentController from "@features/contents/Content.controller";
 
 const router = Router();
 

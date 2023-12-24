@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { comment, content, user } from "../db";
+import { comment, content, user } from "../../database";
 
 export const CommentSeeder = async (size = 10) => {
   const contents = await content.findMany({});

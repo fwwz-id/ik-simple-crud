@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@database": ["./src/database/*"],
+      "@features": ["./src/features/*"],
+      "@middlewares": ["./src/middlewares/*"]
+    }
+  }
+}
