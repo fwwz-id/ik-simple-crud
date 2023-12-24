@@ -16,12 +16,9 @@ if (
   });
 }
 
-const { content, comment, user } = {
-  comment: prisma.comment,
-  content: prisma.content,
-  user: prisma.user,
-};
-
-export { comment, content, user };
+export const comment = prisma.comment;
+export const content = prisma.content;
+export const like = prisma.like;
+export const user = prisma.user;
 
 export default prisma;

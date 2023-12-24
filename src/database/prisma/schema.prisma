@@ -19,9 +19,9 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  Comment  Comment[]
-  Content  Content[]
-  UserLike UserLike[]
+  Comments Comment[]
+  Contents Content[]
+  Likes    Like[]
 
   @@map("users")
 }
@@ -36,8 +36,9 @@ model Content {
   updatedAt DateTime @default(now())
 
   Comments Comment[]
-  UserLike UserLike[]
-  User     User       @relation(fields: [author_id], references: [id])
+  Likes    Like[]
+
+  User User @relation(fields: [author_id], references: [id])
 
   @@map("contents")
 }
@@ -53,37 +54,29 @@ model Comment {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  replies  Comment[]  @relation("CommentToReply")
-  parent   Comment?   @relation("CommentToReply", fields: [parent_id], references: [id])
-  Content  Content    @relation(fields: [content_id], references: [id])
-  User     User       @relation(fields: [author_id], references: [id])
-  UserLike UserLike[]
+  Likes Like[]
+
+  replies Comment[] @relation("CommentToReply")
+  parent  Comment?  @relation("CommentToReply", fields: [parent_id], references: [id])
+
+  Content Content @relation(fields: [content_id], references: [id])
+  User    User    @relation(fields: [author_id], references: [id])
 
   @@map("comments")
 }
 
-model UserLike {
-  id         Int     @unique @default(autoincrement())
+model Like {
+  id         String  @id @default(uuid()) @db.Char(36)
   comment_id String? @db.Char(36)
   content_id String? @db.Char(36)
-  like_id    String  @db.Char(36)
   user_id    String  @db.Char(36)
-
-  Comment Comment? @relation(fields: [comment_id], references: [id])
-  Content Content? @relation(fields: [content_id], references: [id])
-  Like    Like     @relation(fields: [like_id], references: [id])
-  User    User     @relation(fields: [user_id], references: [id])
-
-  @@map("user_likes")
-}
-
-model Like {
-  id String @id @default(uuid()) @db.Char(36)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  UserLike UserLike[]
+  Comment Comment? @relation(fields: [comment_id], references: [id])
+  Content Content? @relation(fields: [content_id], references: [id])
+  User    User     @relation(fields: [user_id], references: [id])
 
   @@map("likes")
 }

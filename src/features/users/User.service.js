@@ -1,4 +1,4 @@
-import { user } from "../../database";
+import { user } from "@database/index";
 
 import { NotFoundException, UnauthorizedException } from "../../errors/exceptions";
 import { generateApiKey } from "../../lib/auth.lib";

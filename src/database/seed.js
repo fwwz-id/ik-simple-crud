@@ -8,8 +8,15 @@ import {
   RepliesSeeder,
 } from "@features/comments/Comment.seeder";
 import UserSeeder from "@features/users/User.seeder";
+import LikeSeeder from "@features/likes/Like.seeder";
 
-const seeder = [UserSeeder, ContentSeeder, CommentSeeder, RepliesSeeder];
+const seeder = [
+  UserSeeder,
+  ContentSeeder,
+  CommentSeeder,
+  RepliesSeeder,
+  LikeSeeder,
+];
 
 const Seed = async (seeders = seeder) => {
   if (!seeders.length) {

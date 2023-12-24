@@ -1,4 +1,4 @@
-import { content } from "@database";
+import { content } from "@database/index";
 
 export default class ContentService {
   _model = content;
@@ -22,7 +22,30 @@ export default class ContentService {
 
   async getAllContents() {
     const contents = await this.model.findMany({
-      include: this.include,
+      select: {
+        id: true,
+        author_id: true,
+        content: true,
+        createdAt: true,
+        updatedAt: true,
+        User: true,
+        Comments: {
+          include: {
+            User: true,
+            replies: true,
+          },
+        },
+        _count: {
+          select: {
+            Comments: {
+              where: {},
+            },
+            Likes: {
+              where: {},
+            },
+          },
+        },
+      },
     });
 
     return {

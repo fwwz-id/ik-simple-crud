@@ -16,6 +16,7 @@
         "revert",
         "style"
       ]
-    ]
+    ],
+    "footer-max-line-length": [0, "always", 300]
   }
 }
