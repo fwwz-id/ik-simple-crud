@@ -4,6 +4,7 @@ import { NotFoundException, UnauthorizedException } from "../../errors/exception
 import { generateApiKey } from "../../lib/auth.lib";
 
 export default class UserService {
+  /** @private */
   _model = user;
 
   get model() {

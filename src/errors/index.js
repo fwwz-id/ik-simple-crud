@@ -10,6 +10,7 @@ export default class ExceptionHandler {
        * @param {import("express").Response} res
        * @param {import("express").NextFunction} next
        */
+      // eslint-disable-next-line no-unused-vars
       (err, req, res, next) => {
         console.log(
           "\x1b[31m%s\x1b[0m",

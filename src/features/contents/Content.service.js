@@ -1,6 +1,7 @@
 import { content } from "@database/index";
 
 export default class ContentService {
+  /** @private */
   _model = content;
 
   get model() {
@@ -71,13 +72,13 @@ export default class ContentService {
    * @param {(import("@prisma/client").Prisma.Without<import("@prisma/client").Prisma.ContentCreateInput, import("@prisma/client").Prisma.ContentUncheckedCreateInput> & import("@prisma/client").Prisma.ContentUncheckedCreateInput) | (import("@prisma/client").Prisma.Without<import("@prisma/client").Prisma.ContentUncheckedCreateInput, import("@prisma/client").Prisma.ContentCreateInput> & import("@prisma/client").Prisma.ContentCreateInput)} data
    */
   async createContent(data) {
-    const contents = await this.model.create({
+    const content = await this.model.create({
       data,
       include: this.include,
     });
 
     return {
-      data: contents,
+      data: content,
     };
   }
 }
