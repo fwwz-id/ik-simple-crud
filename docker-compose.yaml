@@ -1,4 +1,4 @@
-version: '3'
+version: "1"
 services:
   # Node.js server
   node-app:
@@ -10,6 +10,8 @@ services:
       - .env
     depends_on:
       - mysql
+    command: >
+      bash -c "yarn && ./wait-for-it.sh mysql:3306 -- yarn prisma migrate reset --force && yarn start"
 
   # MySQL database
   mysql:
@@ -19,3 +21,7 @@ services:
       - .env
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
