@@ -13,13 +13,8 @@ const ContentSeeder = async (size = 10) => {
     [...Array(size)].map(() => {
       const user = faker.helpers.arrayElement(users);
 
-      return content_service.createContent({
+      return content_service.createContent(user.id, {
         content: faker.lorem.paragraphs(),
-        User: {
-          connect: {
-            id: user.id,
-          },
-        },
       });
     }),
   );
