@@ -23,10 +23,10 @@ export default class UserController {
    */
   // eslint-disable-next-line no-unused-vars
   static async show(req, res, next) {
-    const { id } = req.params;
+    const _user = req.user;
 
     const user = new UserService();
-    const response = await user.getUserById(id);
+    const response = await user.getUserByApiKey(_user.api_key);
 
     res.status(StatusCodes.OK).json(response);
   }

@@ -24,7 +24,17 @@ const isAuthorized =
 
       next();
     } catch (error) {
-      next(error); // Pass the error to the error handler
+      if (req.method != "GET") {
+        next(error);
+      }
+
+      if (req.url == "/users" && req.method == "GET") {
+        next(error);
+      }
+
+      next(
+        new UnauthorizedException("You're not allowed to access this route!"),
+      ); // Pass the error to the error handler
     }
   };
 
